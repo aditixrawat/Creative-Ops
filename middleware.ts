@@ -6,7 +6,7 @@ import type { Database } from "@/lib/supabase/types";
 const PUBLIC_ROUTES = ["/login", "/signup", "/auth/callback"];
 
 /** Routes that require admin role */
-const ADMIN_ROUTES  = ["/analytics", "/settings/billing", "/settings/team"];
+const ADMIN_ROUTES = ["/analytics", "/settings/billing", "/settings/team"];
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -27,7 +27,7 @@ export async function middleware(request: NextRequest) {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        getAll:  ()      => request.cookies.getAll(),
+        getAll: () => request.cookies.getAll(),
         setAll: (toSet: { name: string; value: string; options: CookieOptions }[]) => {
           toSet.forEach(({ name, value, options }) => {
             request.cookies.set(name, value);
@@ -39,8 +39,11 @@ export async function middleware(request: NextRequest) {
   );
 
   // Refresh session — required on every request for SSR auth
-  const { data: { user } } = await supabase.auth.getUser();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
 
+  const user = session?.user;
   const isPublicRoute = PUBLIC_ROUTES.some((r) => pathname.startsWith(r));
 
   // ── Unauthenticated → redirect to login ──

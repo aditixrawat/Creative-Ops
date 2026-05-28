@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils/cn";
 
 // Mobile bottom nav items (5 max)
 const MOBILE_NAV = [
-  { href: "/dashboard",  icon: "ti-layout-dashboard", label: "Home"      },
-  { href: "/campaigns",  icon: "ti-target",           label: "Campaigns" },
-  { href: "/prompts",    icon: "ti-bulb",             label: "Prompts"   },
-  { href: "/swipe",      icon: "ti-sparkles",         label: "Swipe"     },
-  { href: "/analytics",  icon: "ti-chart-bar",        label: "Analytics" },
+  { href: "/dashboard", icon: "ti-layout-dashboard", label: "Home" },
+  { href: "/campaigns", icon: "ti-target", label: "Campaigns" },
+  { href: "/prompts", icon: "ti-bulb", label: "Prompts" },
+  { href: "/swipe", icon: "ti-sparkles", label: "Swipe" },
+  { href: "/analytics", icon: "ti-chart-bar", label: "Analytics" },
 ] as const;
 
 interface Props {
@@ -85,18 +85,7 @@ export function AppShell({ children, title, actions }: Props) {
         </header>
 
         {/* Page content */}
-        <motion.main
-          key={pathname}
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.18, ease: [0, 0, 0.2, 1] }}
-          className="flex-1 overflow-y-auto overflow-x-hidden"
-        >
-          {/* Inner wrapper — consistent gutter + max-width */}
-          <div className="content-grid py-6">
-            {children}
-          </div>
-        </motion.main>
+        <main className="flex-1 overflow-y-auto overflow-x-hidden"></main>
       </div>
 
       {/* ── Bottom nav (mobile) ── */}
@@ -126,6 +115,6 @@ export function AppShell({ children, title, actions }: Props) {
           );
         })}
       </nav>
-    </div>
+    </div >
   );
 }
