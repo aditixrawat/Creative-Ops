@@ -448,4 +448,3 @@ supabase gen types typescript --project-id YOUR_PROJECT_ID > lib/supabase/types.
 MIT — use freely for commercial and personal projects.
 
 ---
-*Built with Claude — Creative Ops SaaS, 2025*
