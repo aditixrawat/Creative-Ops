@@ -1,6 +1,6 @@
 # Creative Ops — AI-Powered Creative Operations Platform
 
-> Dark futuristic SaaS for creative strategists and AI interns.
+> SaaS for creative strategists and AI interns.
 > Built with Next.js 15 · Tailwind · Framer Motion · shadcn/ui · Supabase · Recharts.
 
 ---
