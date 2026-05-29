@@ -82,7 +82,6 @@ export default function LoginPage() {
         const { error } = await sb.auth.signInWithPassword({ email, password });
         if (error) throw error;
         router.push("/dashboard");
-        router.refresh();
       }
     } catch (err: unknown) {
       setError((err as Error).message ?? "Sign in failed");
