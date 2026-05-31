@@ -75,7 +75,7 @@ export default function SettingsPage() {
   const dirty = user ? (fullName !== user.full_name || role !== user.role) : false;
 
   useEffect(() => {
-    sb.auth.getUser().then(async ({ data }) => {
+    sb.auth.getUser().then(async ({ data }: any) => {
       if (!data.user) return;
       const { data: profile } = await sb.from("users").select("*").eq("id", data.user.id).single();
       if (profile) {

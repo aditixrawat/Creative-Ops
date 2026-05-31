@@ -145,7 +145,7 @@ function AddDrawer({ onClose }: { onClose: () => void }) {
   const [authorId, setAuthorId] = useState("");
 
   if (!authorId) {
-    getSupabaseBrowser().auth.getUser().then(({ data }) => {
+    getSupabaseBrowser().auth.getUser().then(({ data }: any) => {
       if (data.user) setAuthorId(data.user.id);
     });
   }
@@ -284,7 +284,7 @@ export default function SwipePage() {
             <select value={collection} onChange={e => setCollection(e.target.value)}
               className="input input-mono text-[11px] py-2 w-44">
               <option value="">All collections</option>
-              {collections.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+              {collections.map((c: any) => <option key={c.id} value={c.id}>{c.name}</option>)}
             </select>
           )}
         </div>

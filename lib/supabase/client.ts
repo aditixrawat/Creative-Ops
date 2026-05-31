@@ -1,12 +1,11 @@
 import { createBrowserClient } from "@supabase/ssr";
-import type { Database } from "./types";
 
-let client: ReturnType<typeof createBrowserClient<Database>> | null = null;
+let client: any = null;
 
 /** Singleton browser client — safe to call anywhere in client components */
 export function getSupabaseBrowser() {
   if (!client) {
-    client = createBrowserClient<Database>(
+    client = createBrowserClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     );

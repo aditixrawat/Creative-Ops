@@ -71,7 +71,7 @@ export default function PromptsPage() {
   // Get current user id for new prompts
   const [authorId, setAuthorId] = useState("");
   if (!authorId) {
-    getSupabaseBrowser().auth.getUser().then(({ data }) => {
+    getSupabaseBrowser().auth.getUser().then(({ data }: any) => {
       if (data.user) setAuthorId(data.user.id);
     });
   }

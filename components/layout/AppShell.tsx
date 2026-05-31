@@ -85,7 +85,9 @@ export function AppShell({ children, title, actions }: Props) {
         </header>
 
         {/* Page content */}
-        <main className="flex-1 overflow-y-auto overflow-x-hidden"></main>
+        <main className="flex-1 overflow-y-auto overflow-x-hidden">
+          {children}
+        </main>
       </div>
 
       {/* ── Bottom nav (mobile) ── */}
