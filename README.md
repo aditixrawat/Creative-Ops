@@ -1,6 +1,6 @@
 # Creative Ops — AI-Powered Creative Operations Platform
 
-> Dark futuristic SaaS for creative strategists and AI interns.
+> SaaS for creative strategists and AI interns.
 > Built with Next.js 15 · Tailwind · Framer Motion · shadcn/ui · Supabase · Recharts.
 
 ---
@@ -448,5 +448,3 @@ supabase gen types typescript --project-id YOUR_PROJECT_ID > lib/supabase/types.
 MIT — use freely for commercial and personal projects.
 
 ---
-
-*Built with Claude — Creative Ops SaaS, 2025*
